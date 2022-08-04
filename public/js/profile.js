@@ -1,3 +1,5 @@
+cpnsole.log("profile.js loaded")
+
 const newFormHandler = async (event) => {
     event.preventDefault();
   

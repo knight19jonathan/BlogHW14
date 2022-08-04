@@ -10,6 +10,11 @@
       "password": "password12345"
     },
     {
+      "name": "Joe",
+      "email": "joe@joe.joe",
+      "password": "password"
+    },
+    {
       "name": "Amiko",
       "email": "amiko2k20@aol.com",
       "password": "password12345"
