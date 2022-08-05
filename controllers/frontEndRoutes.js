@@ -1,21 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const {User,Project} = require('../models');
+const {User,post} = require('../models');
 
 router.get("/",(req,res)=>{
-    Project.findAll({
+   post.findAll({
         include:[User]
     }).then(data=>{
         const hbsData = data.map(proj=>proj.toJSON())
         res.render("homepage",{
-            projects:hbsData,
+           posts:hbsData,
             logged_in:req.session.logged_in
         })
     })
 })
 
-router.get("/project/:id",(req,res)=>{
-    Project.findByPk(req.params.id).then(projData=>{
+router.get("/post/:id",(req,res)=>{
+   post.findByPk(req.params.id).then(projData=>{
         const hbsData = projData.toJSON();
         hbsData.logged_in=req.session.logged_in
         res.render("singleProj",hbsData)
@@ -34,7 +34,7 @@ router.get("/profile",(req,res)=>{
         res.redirect("/login")
     }
     User.findByPk(req.session.user_id,{
-        include:[Project]
+        include:[post]
     }).then(userData=>{
         const hbsData = userData.toJSON();
         console.log(hbsData)

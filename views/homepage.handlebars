@@ -1,10 +1,16 @@
+<head><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+    
+</body>
 <h1>Homepage</h1>
-<h3>All projects:</h3>
-{{#each projects}}
+<nav></nav>
+<h3>All posts:</h3>
+{{#each posts}}
 <div class="card">
-    <h3><a href="/project/{{id}}">{{id}}. {{name}} by {{user.name}}</a></h3>
+    <h3><a href="/post/{{id}}">{{id}}. {{name}} by {{user.name}}</a></h3>
     <h5>Created on: {{date_created}} needs ${{needed_funding}}.00</h5>
     <p>{{description}}</p>
     <hr>
 </div>
 {{/each}}
+</body>

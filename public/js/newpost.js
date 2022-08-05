@@ -1,4 +1,4 @@
-console.log("logoutBtn.js loaded")
+console.log("newpost.js loaded")
 
 document.querySelector("#new-proj").addEventListener("submit",e=>{
     e.preventDefault();
@@ -8,7 +8,7 @@ document.querySelector("#new-proj").addEventListener("submit",e=>{
         needed_funding:document.querySelector("#funding").value
     }
     console.log(projObj)
-    fetch("/api/projects",{
+    fetch("/api/posts",{
         method:"POST",
         body:JSON.stringify(projObj),
         headers:{

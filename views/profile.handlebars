@@ -1,17 +1,17 @@
 <h1>Welcome back, {{name}}</h1>
-<h2>My Projects</h2>
-{{#each projects}}
-    <a href="/project/{{id}}">{{name}}</a>
+<h2>My Posts</h2>
+{{#each posts}}
+    <a href="/post/{{id}}">{{name}}</a>
     <button class="del-btn" data-id="{{id}}">Delete</button>
     <hr>
 {{/each}}
 
-<h2>Add a project</h2>
+<h2>Add a post</h2>
 <form action="" id="new-proj">
     <input type="text" id="name" placeholder="name">
     <textarea id="description" placeholder="description"></textarea>
     <input type="text" id="funding" placeholder="needed funding">
     <button>Create</button>
 </form>
-<script src="/public/js/newProject.js"></script>
-<script src="/public/js/delBtn.js"></script>
+<script src="/js/newpost.js"></script>
+<script src="/js/delBtn.js"></script>

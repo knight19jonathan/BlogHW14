@@ -18,7 +18,7 @@ document.querySelector("#login").addEventListener("submit",e=>{
       if(res.ok){
          location.href = "/profile"
       } else {
-          alert("trumpet sound")
+          alert("successfully logged in")
       }
   })
 })
@@ -41,7 +41,7 @@ document.querySelector("#signup").addEventListener("submit",e=>{
       if(res.ok){
          location.href = "/profile"
       } else {
-          alert("trumpet sound")
+          alert("successfully signed up")
       }
   })
 })
