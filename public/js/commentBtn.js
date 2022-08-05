@@ -1,7 +1,7 @@
 console.log("commentBtn.js loaded")
 
 
-document.querySelector("#add-comment").addEventListener("submit",e=>{
+document.querySelector("#new-comment").addEventListener("submit",e=>{
     e.preventDefault();
     const commObj = {
         description:document.querySelector("#comment-description").value,
@@ -21,3 +21,4 @@ document.querySelector("#add-comment").addEventListener("submit",e=>{
         }
     })
 })
+
