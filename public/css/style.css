@@ -23,5 +23,5 @@ header, .post:not(:last-child) {
     margin-left: -5px;
   }
 body {
-  background-color: aqua;
+  background-color: rgb(150, 154, 154);
 }

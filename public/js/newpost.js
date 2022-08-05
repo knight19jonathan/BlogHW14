@@ -5,7 +5,6 @@ document.querySelector("#new-proj").addEventListener("submit",e=>{
     const projObj = {
         name:document.querySelector("#name").value,
         description:document.querySelector("#description").value,
-        needed_funding:document.querySelector("#funding").value
     }
     console.log(projObj)
     fetch("/api/posts",{
@@ -18,7 +17,7 @@ document.querySelector("#new-proj").addEventListener("submit",e=>{
         if(res.ok){
            location.reload()
         } else {
-            alert("trumpet sound")
+            alert("error or something")
         }
     })
 })

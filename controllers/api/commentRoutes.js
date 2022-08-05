@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { post } = require('../../models');
+const { comment } = require('../../models');
 
 router.get("/",async (req,res)=>{
   try {
-    const posts = await post.findAll();
-    res.json(posts)
+    const comments = await comment.findAll();
+    res.json(comments)
   }catch (err) {
     res.status(400).json(err);
   }
@@ -12,8 +12,8 @@ router.get("/",async (req,res)=>{
 
 router.get("/:id",async (req,res)=>{
   try {
-    const singleposts = await post.findByPk();
-    res.json(singleposts)
+    const singlecomments = await comment.findByPk();
+    res.json(singlecomments)
   }catch (err) {
     res.status(400).json(err);
   }
@@ -24,12 +24,12 @@ router.post('/', async (req, res) => {
     res.status(403).json({msg:"login first!"})
   }
   try {
-    const newpost = await post.create({
+    const newcomment = await comment.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newpost);
+    res.status(200).json(newcomment);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -40,19 +40,19 @@ router.delete('/:id', async (req, res) => {
     res.status(403).json({msg:"login first!"})
   }
   try {
-    const postData = await post.destroy({
+    const commentData = await comment.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!postData) {
-      res.status(404).json({ message: 'No post found with this id!' });
+    if (!commentData) {
+      res.status(404).json({ message: 'No comment found with this id!' });
       return;
     }
 
-    res.status(200).json(postData);
+    res.status(200).json(commentData);
   } catch (err) {
     res.status(500).json(err);
   }

@@ -1,16 +1,34 @@
 <head><link rel="stylesheet" href="/css/style.css"></head>
 <body>
     
-</body>
+
 <h1>Homepage</h1>
 <nav></nav>
 <h3>All posts:</h3>
 {{#each posts}}
 <div class="card">
     <h3><a href="/post/{{id}}">{{id}}. {{name}} by {{user.name}}</a></h3>
-    <h5>Created on: {{date_created}} needs ${{needed_funding}}.00</h5>
+    <h5>Created on: {{date_created}}</h5>
     <p>{{description}}</p>
     <hr>
-</div>
+    <form action="" id="new-comment">
+        <textarea id="comment-description" placeholder="comment"></textarea>
+        <button type="submit">Comment</button>
+    </form>
 {{/each}}
+    <hr>
+    {{#each commentmodels}}
+    <div>
+    <hr>
+        <h3>{{user.name}}</h3>
+        <h5>{{date_created}}</h5>
+        <p>{{description}}</p>
+        
+    <hr>
+    </div>
+    {{/each}}
+    
+</div>
+
+<script src="/js/commentBtn.js"></script>
 </body>

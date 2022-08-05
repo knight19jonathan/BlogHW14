@@ -18,7 +18,7 @@ router.get("/post/:id",(req,res)=>{
    post.findByPk(req.params.id).then(projData=>{
         const hbsData = projData.toJSON();
         hbsData.logged_in=req.session.logged_in
-        res.render("singleProj",hbsData)
+        res.render("post",hbsData)
     })
 })
 
@@ -34,7 +34,7 @@ router.get("/profile",(req,res)=>{
         res.redirect("/login")
     }
     User.findByPk(req.session.user_id,{
-        include:[post]
+        include:[ post ]
     }).then(userData=>{
         const hbsData = userData.toJSON();
         console.log(hbsData)

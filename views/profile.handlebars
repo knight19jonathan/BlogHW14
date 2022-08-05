@@ -1,16 +1,17 @@
 <h1>Welcome back, {{name}}</h1>
 <h2>My Posts</h2>
-{{#each posts}}
+{{#each postmodels}}
+<div class="card">
     <a href="/post/{{id}}">{{name}}</a>
     <button class="del-btn" data-id="{{id}}">Delete</button>
     <hr>
+</div>
 {{/each}}
 
 <h2>Add a post</h2>
 <form action="" id="new-proj">
     <input type="text" id="name" placeholder="name">
     <textarea id="description" placeholder="description"></textarea>
-    <input type="text" id="funding" placeholder="needed funding">
     <button>Create</button>
 </form>
 <script src="/js/newpost.js"></script>
